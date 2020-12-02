@@ -4,8 +4,9 @@ int i = 0;
 int conversion(long long N, int B)
 {
 	if((long long)N/B < B){
-		arr[i++] = N%B;
-		arr[i] = (int)N/B;
+		arr[i] = N%B;
+		if((int)N/B != 0) // 마지막 몫이 0 일때 무시
+			arr[++i] = (int)N/B;
 		return 0; 	
 	}else{
 		arr[i++] = N%B;
@@ -23,7 +24,6 @@ int main()
 		if(arr[j] >= 10){
 			printf("%c", 'A'+arr[j]-10);
 		}else{
-			if(arr[j] == 0 && j == i)	continue;
 			printf("%d", arr[j]);
 		}
 	}
