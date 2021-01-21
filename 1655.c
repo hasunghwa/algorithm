@@ -6,10 +6,8 @@ int min_idx = 0;
 void max_push(int *heap, int input)
 {	
 	int i = ++(max_idx);
-	int cup = 0;
 	while((i != 1) && input > heap[i/2])
 	{
-		cup = heap[i/2];
 		heap[i] = heap[i/2];
 		i /= 2;
 	}	
@@ -18,10 +16,8 @@ void max_push(int *heap, int input)
 void min_push(int *heap, int input)
 {	
 	int i = ++(min_idx);
-	int cup = 0;
 	while((i != 1) && input < heap[i/2])
 	{
-		cup = heap[i/2];
 		heap[i] = heap[i/2];
 		i /= 2;
 	}	
